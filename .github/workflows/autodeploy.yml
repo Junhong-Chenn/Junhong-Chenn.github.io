@@ -58,3 +58,5 @@ jobs:
           branch: master
           folder: dist
           commit-message: "${{ github.event.head_commit.message }} Updated By Github Actions"
+          username: Junhong-Chenn
+          password: ${{ secrets.REMOTE_PASS }}
