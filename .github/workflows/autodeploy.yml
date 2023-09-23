@@ -53,7 +53,7 @@ jobs:
       - name: 部署到Github
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          token: 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
+          token: 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
           repository-name: Junhong-Chenn/Junhong-Chenn.github.io
           branch: master
           folder: dist
