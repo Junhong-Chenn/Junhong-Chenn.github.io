@@ -28,7 +28,7 @@ jobs:
           export TZ='Asia/Shanghai'
           npm install hexo-cli -g
 
-      - name: 缓存 Hexo
+      - name: 缓存
         id: cache-npm
         uses: actions/cache@v3
         env:
@@ -49,16 +49,14 @@ jobs:
 
       - name: 生成静态文件
         run: |
-          hexo clean
-          hexo bangumi -u #bilibili番剧更新
-          hexo generate
+          npm run build
           gulp
 
       - name: 部署到Github
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           token: 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
-          repository-name: anzhiyu-a/anzhiyu-a.github.io
+          repository-name: Junhong-Chenn/Junhong-Chenn.github.io
           branch: master
           folder: public
           commit-message: "${{ github.event.head_commit.message }} Updated By Github Actions"
