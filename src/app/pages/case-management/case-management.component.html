@@ -4,6 +4,12 @@
             <nz-radio-group [(ngModel)]="radioValue" nzButtonStyle="solid" (ngModelChange)="onCaseTypeChange($event)">
             <label nz-radio-button [nzValue]="item.key" *ngFor="let item of caseType">{{ item.value }}</label>
             </nz-radio-group>
+            <nz-upload [(nzFileList)]="fileList" [nzBeforeUpload]="beforeUpload.bind(this)" (nzChange)="importExcelData($event)">
+              <button nz-button>
+                <i nz-icon nzType="upload"></i>
+                Import Excel File
+              </button>
+            </nz-upload>
             <button nz-button nzType="primary" (click)="openDetail()" class="add">+ Add New</button>
         </div>
         <nz-table
@@ -35,19 +41,8 @@
               <td nzEllipsis>{{ data.dateOfBirth }}</td>
               <td nzEllipsis>{{ data.contactNumber }}</td>
               <td nzEllipsis>{{ data.email}}</td>
-              <td>
-                <span *ngFor="let item of data.developGoal">
-                  <nz-tag [nzColor]="'magenta'">{{ item }}</nz-tag>
-                </span>
-              </td>
-              <td>
-                <span *ngFor="let item of data.servicePlanList">
-                  <nz-tag [nzColor]="'green'" nz-tooltip=""
-                          [nzTooltipTitleContext]="{ $implicit: item }">
-                    <span>{{ item?.["serviceName"] }}</span>
-                  </nz-tag>
-                </span>
-              </td>
+              <td>{{data?.developGoal}}</td>
+              <td>{{data.servicePlan}}</td>
               <td nzEllipsis>{{data.assignedNavigator}}</td>
               <!-- <td nzEllipsis>{{data.cabinNumber}}</td> -->
               <td nzEllipsis>{{data.moveInDate}}</td>

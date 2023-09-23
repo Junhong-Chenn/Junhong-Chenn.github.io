@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CaseManagementRoutingModule } from './case-management-routing.module';
 import { CaseManagementComponent } from './case-management.component';
 import { CaseDetailComponent } from './caseDetail/caseDetail.component';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
 
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzTableModule } from 'ng-zorro-antd/table';
@@ -19,6 +20,7 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzTimelineModule } from 'ng-zorro-antd/timeline';
 import { NzCommentModule } from 'ng-zorro-antd/comment';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import {NzIconModule} from "ng-zorro-antd/icon";
 @NgModule({
   declarations: [
     CaseManagementComponent,
@@ -44,7 +46,9 @@ import { NzSwitchModule } from 'ng-zorro-antd/switch';
     NzCollapseModule,
     NzTimelineModule,
     NzCommentModule,
-    NzSwitchModule
+    NzUploadModule,
+    NzSwitchModule,
+    NzIconModule
   ]
 })
 export class CaseManagementModule { }
