@@ -56,5 +56,5 @@ jobs:
           token: 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
           repository-name: Junhong-Chenn/Junhong-Chenn.github.io
           branch: master
-          folder: public
+          folder: dist
           commit-message: "${{ github.event.head_commit.message }} Updated By Github Actions"
